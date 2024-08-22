@@ -1,0 +1,81 @@
+body {
+    background-color: black; 
+    color: white; 
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    background-color: grey; 
+    color: white; 
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+button {
+    background-color: grey; 
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:disabled {
+    background-color: #555; 
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #777;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.player-container {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.player-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="number"] {
+    background-color: black; 
+    color: white;
+    border: 1px solid grey; 
+    padding: 5px;
+    width: 80px;
+    margin-bottom: 5px;
+    text-align: center;
+}
