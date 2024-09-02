@@ -124,9 +124,40 @@ function handleSend(player) {
     }
 }
 
+const withdraw = () => {
+    console.log("hellooo this is withdraw", claimAmtEle.innerText);
+    const clientAddress = localStorage.getItem("clientAddress");
+
+    fetch("/withdraw", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        clientAddress,
+        claimAmt: claimAmtEle.value,
+      }),
+    });
+    claimAmtEle.innerText = 0;
+  };
+
 function handleWithdraw(player) {
     alert(`${player} is withdrawing`);
     // Implement logic to withdraw the amount
+    const clientAddress = document.getElementById(`${player}Add`).innerText
+    console.log(clientAddress);
+    
+    fetch("/withdraw", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          clientAddress,
+          claimAmt: 10,
+        }),
+      });
+  
 }
 
 cells.forEach(cell => cell.addEventListener('click', handleCellClick));
