@@ -79,3 +79,9 @@ input[type="number"] {
     margin-bottom: 5px;
     text-align: center;
 }
+
+.player-info {
+    border: 2px solid gold;
+    margin-right: 40px;
+    margin: 20 auto;
+}
